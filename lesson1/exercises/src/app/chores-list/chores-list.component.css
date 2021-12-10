@@ -1,0 +1,14 @@
+.chores {
+    font-family: sans-serif;
+    color: coral;
+}
+
+.chores ul {
+    font-size: 20px;
+    font-style: italic;
+}
+
+.chores h3 {
+    font-size: 45px;
+    text-decoration: underline;
+}
