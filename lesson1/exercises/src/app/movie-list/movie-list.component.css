@@ -1,7 +1,9 @@
+.movies{
+    border-right: 1px dashed pink;
+}
 .movies h3 {
     color: cadetblue;
     text-align: center;
-    font-size: 45px;
 }
 
 .movies ol {
