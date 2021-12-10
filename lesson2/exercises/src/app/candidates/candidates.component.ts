@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CandidatesComponent implements OnInit {
    missionName = "LaunchCode Moonshot"
+   selected;
 
    candidates = [
     {name: 'Rusty Rutabaga', data: {age: 5, mass: '0.75 kg', sidekick: 'Blake'}, image: 'assets/images/Blake.png'},
@@ -20,12 +21,32 @@ export class CandidatesComponent implements OnInit {
 
   constructor() { }
 
+  changeSelected(candidate){
+    this.selected = candidate
+  };
+
   ngOnInit() {
   }
 
   // Code the addToCrew function here:
+  addToCrew = (crewMember) => {
+    if(crewMember && this.crew.filter((member) => crewMember.name === member.name).length < 1){
+      this.crew.push(crewMember);
+    }
+  }
 
+  clearCrew = () => {
+    this.crew = [];
+  }
 
+  missionAvailable = () => {
+    return (this.selected) && 
+           (this.crew.length < 3) && 
+           (this.crew.filter((member) => this.selected.name === member.name).length < 1)
+  }
+  changeMissionName = (event) => {
+    this.missionName = event.target.value.length > 2 ? event.target.value : this.missionName;
+  }
   // BONUS: Code the changeMissionName function here:
 
 

@@ -1,7 +1,15 @@
 .candidates {
     color: purple;
 }
-
+.candidate-data {
+    text-transform: capitalize;
+}
+.mission{
+    display: none;
+}
+.visible {
+    display: inline-block;
+}
 .data {
     color: brown;
 }
